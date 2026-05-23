@@ -1,0 +1,52 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" uid="uid://cm0s80i11ptu0" path="res://Scenes/Characters/Player.tscn" id="1_player"]
+[ext_resource type="PackedScene" path="res://Scenes/Characters/Player2.tscn" id="2_player2"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/GameHUD.tscn" id="3_hud"]
+[ext_resource type="Texture2D" path="res://Assets/Stages/Backgrounds/Tokyo.png" id="5_bg"]
+[ext_resource type="Script" path="res://Scripts/Stages/pve_stage.gd" id="4_stage"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_floor"]
+size = Vector2(2000, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall"]
+size = Vector2(40, 1200)
+
+[node name="PVEStage" type="Node2D"]
+script = ExtResource("4_stage")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(5, 300)
+texture = ExtResource("5_bg")
+scale = Vector2(0.804, 0.804)
+centered = true
+z_index = -10
+
+[node name="Floor" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(6, 520)
+shape = SubResource("RectangleShape2D_floor")
+
+[node name="LeftWall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+position = Vector2(-938, 10)
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+position = Vector2(936, 13)
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="Player1" parent="." instance=ExtResource("1_player")]
+position = Vector2(-282, 484)
+
+[node name="Player2" parent="." instance=ExtResource("2_player2")]
+position = Vector2(300, 484)
+
+[node name="GameHUD" parent="." instance=ExtResource("3_hud")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(5, 300)

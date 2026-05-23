@@ -1,0 +1,27 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3]
+
+[ext_resource type="Texture2D" uid="uid://qpeomfvv8hkt" path="res://photo/Pim/pim_idle-sprites/sprite-001.png" id="1_p0"]
+[ext_resource type="Texture2D" uid="uid://cmuxia3a6rmie" path="res://photo/Pim/pim_idle-sprites/sprite-002.png" id="2_p1"]
+[ext_resource type="Texture2D" uid="uid://d14necq12jic6" path="res://photo/Pim/pim_idle-sprites/sprite-003.png" id="3_p2"]
+[ext_resource type="Texture2D" uid="uid://cky13co28rws3" path="res://photo/Pim/pim_idle-sprites/sprite-004.png" id="4_p3"]
+[ext_resource type="Texture2D" uid="uid://clx3ngsskdrk4" path="res://photo/Pim/pim_idle-sprites/sprite-005.png" id="5_p4"]
+[ext_resource type="Texture2D" uid="uid://bvs6cv5tigvub" path="res://photo/Pim/pim_idle-sprites/sprite-006.png" id="6_p5"]
+[ext_resource type="Texture2D" uid="uid://cit6v03bb06t3" path="res://photo/Pim/pim_idle-sprites/sprite-007.png" id="7_p6"]
+[ext_resource type="Texture2D" uid="uid://dq863vjt14lmx" path="res://photo/Pim/pim_idle-sprites/sprite-008.png" id="8_p7"]
+
+[resource]
+animations = [{
+"frames": [
+ExtResource("1_p0"),
+ExtResource("2_p1"),
+ExtResource("3_p2"),
+ExtResource("4_p3"),
+ExtResource("5_p4"),
+ExtResource("6_p5"),
+ExtResource("7_p6"),
+ExtResource("8_p7")
+],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]

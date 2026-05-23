@@ -1,0 +1,108 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/UI/character_select.gd" id="1_script"]
+[ext_resource type="SpriteFrames" path="res://Assets/Characters/Animations/xi_sprite_frames.tres" id="2_xi_frames"]
+[ext_resource type="SpriteFrames" path="res://Assets/Characters/Animations/pim_sprite_frames.tres" id="3_pim_frames"]
+
+[node name="CharacterSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.08, 0.08, 0.12, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_top = 30.0
+offset_right = 300.0
+offset_bottom = 80.0
+text = "SELECT YOUR FIGHTER"
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 36
+theme_override_colors/font_color = Color(1, 0.85, 0.2, 1)
+
+[node name="Cards" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.2
+anchor_right = 0.5
+anchor_bottom = 0.78
+offset_left = -320.0
+offset_right = 320.0
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="XICard" type="VBoxContainer" parent="Cards"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 12
+
+[node name="XITexture" type="TextureRect" parent="Cards/XICard"]
+custom_minimum_size = Vector2(220, 540)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="XIName" type="Label" parent="Cards/XICard"]
+layout_mode = 2
+text = "Suit-Clad Man"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+
+[node name="XISelectBtn" type="Button" parent="Cards/XICard"]
+layout_mode = 2
+text = "SELECT"
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+
+[node name="PIMCard" type="VBoxContainer" parent="Cards"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 12
+
+[node name="PIMTexture" type="TextureRect" parent="Cards/PIMCard"]
+custom_minimum_size = Vector2(198, 486)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="PIMName" type="Label" parent="Cards/PIMCard"]
+layout_mode = 2
+text = "Bikini-Clad Hottie"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+
+[node name="PIMSelectBtn" type="Button" parent="Cards/PIMCard"]
+layout_mode = 2
+text = "SELECT"
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+
+[node name="BackBtn" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_top = 0.8
+anchor_bottom = 0.8
+offset_left = -80.0
+offset_right = 80.0
+text = "BACK"
+theme_override_font_sizes/font_size = 24
+theme_override_colors/font_color = Color(1, 1, 1, 0.7)

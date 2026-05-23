@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cm0s80i11ptu0"]
+
+[ext_resource type="SpriteFrames" uid="uid://f1hha1j64fnf" path="res://Assets/Characters/Animations/xi_sprite_frames.tres" id="1_xi_frames"]
+[ext_resource type="Script" uid="uid://51wcyxxt430m" path="res://Scripts/Characters/player.gd" id="2_player"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_player"]
+radius = 30.0
+height = 200.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hurtbox"]
+radius = 48.0
+height = 370.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hitbox"]
+size = Vector2(60, 36)
+
+[node name="Player1" type="CharacterBody2D" unique_id=2007532442]
+script = ExtResource("2_player")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1619755104]
+position = Vector2(0, -16)
+sprite_frames = ExtResource("1_xi_frames")
+animation = &"jump"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1466848059]
+position = Vector2(0, -114)
+shape = SubResource("CapsuleShape2D_player")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=55625124]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1412416569]
+position = Vector2(0, -10)
+shape = SubResource("CapsuleShape2D_hurtbox")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1251352859]
+collision_layer = 4
+collision_mask = 2
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1500990335]
+position = Vector2(50, -50)
+shape = SubResource("RectangleShape2D_hitbox")
